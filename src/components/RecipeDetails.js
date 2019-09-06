@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { recipes } from "./tempDetails";
 export default class RecipeDetails extends Component {
   // constructor(props) {
   //   super(props);
