@@ -52,9 +52,7 @@ export default class RecipeDetails extends Component {
       ingredients
     } = this.state.recipe;
     const { handleIndex } = this.props;
-    if (!ingredients) {
-      return <h1>loading ....</h1>;
-    }
+    
     if (ingredients) {
       return (
         <React.Fragment>
