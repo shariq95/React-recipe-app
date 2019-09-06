@@ -3,20 +3,18 @@ import { recipe } from "../tempDetails";
 export default class RecipeDetails extends Component {
   // constructor(props) {
   //   super(props);
+
   //   this.state = {
   //     recipe: recipe,
-  //     url: `https://www.food2fork.com/api/get?key=6a1374e2f040171ee5746123b167fa5c&rId=${
+  //     url: `https://www.food2fork.com/api/get?key=b6fb5d86fb9419eeec1129a9e77a1ada&rId=${
   //       this.props.id
-  //     }
-  //     `
+  //     }`
   //   };
   // }
-
   // async componentDidMount() {
   //   try {
   //     const data = await fetch(this.state.url);
   //     const jsonData = await data.json();
-
   //     this.setState({
   //       recipe: jsonData.recipe
   //     });
@@ -24,8 +22,6 @@ export default class RecipeDetails extends Component {
   //     console.log(error);
   //   }
   // }
-  // OR
-
   state = {
     recipe: {}
   };
@@ -37,7 +33,6 @@ export default class RecipeDetails extends Component {
     try {
       const data = await fetch(url);
       const jsonData = await data.json();
-      // this is causeing error
       this.setState(
         (state, props) => {
           return { recipe: jsonData.recipe };
@@ -58,12 +53,10 @@ export default class RecipeDetails extends Component {
       title,
       ingredients
     } = this.state.recipe;
-
     const { handleIndex } = this.props;
     if (!ingredients) {
-      return <h1>loading ...</h1>;
+      return <h1>loading ....</h1>;
     }
-
     if (ingredients) {
       return (
         <React.Fragment>
@@ -83,7 +76,7 @@ export default class RecipeDetails extends Component {
               <div className="col-10 mx-auto col-md-6 my-3">
                 <h6 className="text-uppercase">{title}</h6>
                 <h6 className="text-warning text-capitalize text-slanted">
-                  provide by {publisher}
+                  provided by {publisher}
                 </h6>
                 <a
                   href={publisher_url}
@@ -97,7 +90,7 @@ export default class RecipeDetails extends Component {
                   href={source_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-success mx-3 mt-2 text-capitalize"
+                  className="btn btn-success mt-2 mx-3 text-capitalize"
                 >
                   recipe url
                 </a>
