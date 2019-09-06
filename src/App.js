@@ -91,7 +91,7 @@ class App extends Component {
         search: e.target.value
       },
       () => {
-        console.log(this.state.search);
+       // console.log(this.state.search);
       }
     );
   };
